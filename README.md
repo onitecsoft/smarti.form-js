@@ -38,15 +38,32 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Defines javascript variable name of javascript object to be binded to input controls (global scope)</td>
+    <td>Defines javascript object to be binded to input controls (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
 &lt;script&gt;
-  var data = {...};
+  var item = {...};
 &lt;/script&gt;
-&lt;div data-smarti="form" data-name="form" data-data="data"&gt;
+&lt;div data-smarti="form" data-name="form" data-data="item"&gt;
+...
+&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-default-data</b></td>
+    <td>Defines javascript object of default item in case of reset form (global scope)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var item = {...};
+  var defaultItem = {...};
+&lt;/script&gt;
+&lt;div data-smarti="form" data-name="form" data-data="item" data-default-data="defaultItem"&gt;
 ...
 &lt;/div&gt;
 </pre>
