@@ -138,6 +138,39 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
+    <td><b>data-req-field</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-req-rule</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-error-class</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
     <td><b>data-msg</b></td>
     <td>Defines message to show when validator with same name will fail. Message can have multiple names separated by <code>,</code> in case if it belongs to multiple validators. By default all elements with <code>data-msg</code> attribute are hidden</td>
   </tr>
@@ -146,6 +179,28 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <pre lang="html">
 &lt;div data-msg="Email"&gt;Wrong email!&lt;/div&gt;
 &lt;div data-msg="Firstname,Lastname"&gt;Required fields must be filled!&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-reset</b></td>
+    <td>Defines reset button (click will execute form <code>load</code> method with default or empty js object)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;input type="button" value="Reset" data-reset="true" /&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-save</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
 </pre>
     </td>
   </tr>
