@@ -116,6 +116,28 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
+    <td><b>data-set-expr, data-get-expr</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-set-method, data-get-method</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+
+</pre>
+    </td>
+  </tr>
+  <tr>
     <td><b>data-msg</b></td>
     <td>Defines message to show when validator with same name will fail. Message can have multiple names separated by <code>,</code> in case if it belongs to multiple validators. By default all elements with <code>data-msg</code> attribute are hidden</td>
   </tr>
