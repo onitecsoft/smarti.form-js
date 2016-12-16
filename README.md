@@ -76,10 +76,13 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;div data-smarti="form" data-name="form" data=error-class="..."&gt;
+&lt;div data-smarti="form" data-name="form" data-error-class="..."&gt;
 ...
 &lt;/div&gt;
 </pre>
     </td>
   </tr>
 </table>
+
+<b>Inner elements html attribute reference:</b>
+
