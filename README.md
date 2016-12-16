@@ -38,7 +38,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Defines javascript object to be bound to input controls (global scope)</td>
+    <td>Defines js object to be bound to input controls (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -54,7 +54,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-default-data</b></td>
-    <td>Defines javascript object of default item in case of reset form (global scope)</td>
+    <td>Defines js object of default item in case of reset form (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -93,6 +93,28 @@ Automatically initializes when page is loaded. If content was loaded within ajax
       <th>description</th>
     </tr>
   </thead>
+  <tr>
+    <td><b>data-bind</b></td>
+    <td>Defines js object property name to be bound to <code>value</code> property of html element</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;input data-bind="Email" /&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data-prop</b></td>
+    <td>Defines html element propery name to be bound (should be set if it is other than <code>value</code>)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;input type="checkbox" data-bind="Enabled" data-prop="checked" /&gt;
+</pre>
+    </td>
+  </tr>
   <tr>
     <td><b>data-msg</b></td>
     <td>Defines message to show when validator with same name will fail. Message can have multiple names separated by <code>,</code> in case if it belongs to multiple validators. By default all elements with <code>data-msg</code> attribute are hidden</td>
