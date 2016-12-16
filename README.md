@@ -95,7 +95,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-msg</b></td>
-    <td>Defines message to show when validator with same name will fail. Message can have multiple names separated by <code>,</code> in case if it belongs to multiple validators (by default all elements with <code>data-msg</code> attribute are hidden)</td>
+    <td>Defines message to show when validator with same name will fail. Message can have multiple names separated by <code>,</code> in case if it belongs to multiple validators. By default all elements with <code>data-msg</code> attribute are hidden</td>
   </tr>
   <tr>
     <td colspan="2">
