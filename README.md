@@ -195,7 +195,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-save</b></td>
-    <td>Defines save button. Attribute value represents url where form data will be submitted with ajax post request. Server response may be array of <code>data-msg</code> names to show validation error or success messages.</td>
+    <td>Defines save button. Attribute value represents url where form data will be submitted with ajax post request. Server response may represent an array of <code>data-msg</code> names to show validation error or success messages.</td>
   </tr>
   <tr>
     <td colspan="2">
