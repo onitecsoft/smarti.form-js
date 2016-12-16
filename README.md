@@ -86,3 +86,22 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 
 <b>Inner elements html attribute reference:</b>
 
+<table>
+  <thead>
+    <tr>
+      <th>attribute</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><b>data-msg</b></td>
+    <td>Defines message to show when validation with same name will fail (by default all elements with <code>data-msg</code> attribute are hidden)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;div data-msg="Email"&gt;Email is required!&lt;/div&gt;
+</pre>
+    </td>
+  </tr>
+</table>
