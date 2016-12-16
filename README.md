@@ -95,7 +95,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-bind</b></td>
-    <td>Defines js object property name to be bound to <code>value</code> property of html element</td>
+    <td>Defines bound js object property name to <code>value</code> property of HtmlElement</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -106,7 +106,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-prop</b></td>
-    <td>Defines html element propery name to be bound (should be set if it is other than <code>value</code>)</td>
+    <td>Defines bound HtmlElement property name (should be set if it is other than <code>value</code>)</td>
   </tr>
   <tr>
     <td colspan="2">
