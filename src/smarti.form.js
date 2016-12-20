@@ -1,12 +1,10 @@
 var smarti = this['smarti'] || { scope: this };
 
 $(function () {
-	$(window).load(function () {
-		if (!smarti.initialized) {
-			smarti.initialized = true;
-			$('[data-smarti]').smarti();
-		}
-	});
+	if (!smarti.initialized) {
+		smarti.initialized = true;
+		$('[data-smarti]').smarti();
+	}
 });
 
 $.fn.smarti = function () {
