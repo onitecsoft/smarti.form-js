@@ -174,8 +174,10 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   var rule2 = function(e) { return ... }
 &lt;/script&gt;
 &lt;input data-bind="Email" data-req-rule="ValidateEmail" /&gt;
-&lt;input data-bind="Email1" data-req-rule="ValidateEmail2" /&gt;
-&lt;input data-bind="Email2" data-req-rule="ValidateEmail2" /&gt;
+<!--Email1 is used as rule name-->
+&lt;input data-bind="Email1" data-req-rule="Email1:ValidateEmail2" /&gt;
+<!--Email2 is used as rule name-->
+&lt;input data-bind="Email2" data-req-rule="Email2:ValidateEmail2" /&gt;
 &lt;input data-bind="SomeField" data-req-rule="rule1,rule2" /&gt;
 </pre>
     </td>
