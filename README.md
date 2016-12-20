@@ -173,12 +173,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-error-class</b></td>
-    <td></td>
+    <td>Defines CSS class to be applied to current element when validation is failed</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;input data-bind="Name" data-req-field="Name" data-error-class="invalid2" /&gt;
 </pre>
     </td>
   </tr>
