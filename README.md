@@ -71,7 +71,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-error-class</b></td>
-    <td>Defines CSS class to be applied to any element with failed validation</td>
+    <td>Defines CSS class to be applied to all elements within form with failed validation</td>
   </tr>
   <tr>
     <td colspan="2">
