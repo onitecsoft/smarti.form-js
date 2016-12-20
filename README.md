@@ -292,7 +292,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><code>void</code> <b>load(data = null)</b></td>
-    <td>Fill form with data if specified, otherwise <code>defaultData</code> or empty js object is used</td>
+    <td>Fills form with data if specified, otherwise <code>defaultData</code> or empty js object is used</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -307,13 +307,16 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><code>bool</code> <b>save(data = null)</b></td>
-    <td></td>
+    <td>Updates data if specified with form values, otherwise form member <code>data</code> is used. Returns <code>true</code> if validation succeeds</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
 &lt;script&gt;
-
+var data = {};
+var success = form.save(data);
+//or
+if(form.save()) data = form.data;
 &lt;/script&gt;
 </pre>
     </td>
