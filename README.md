@@ -168,16 +168,16 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     <td colspan="2">
 <pre lang="html">
 &lt;script&gt;
-  var ValidateEmail = function (e) { return e.Email != ''; }
-  var ValidateEmail2 = function (e) { return this.value != ''; }
+  var emailValidator = function (e) { return e.Email != ''; }
+  var globalEmailValidator = function (e) { return this.value != ''; }
   var rule1 = function(e) { return ... }
   var rule2 = function(e) { return ... }
 &lt;/script&gt;
-&lt;input data-bind="Email" data-req-rule="ValidateEmail" /&gt;
+&lt;input data-bind="Email" data-req-rule="emailValidator" /&gt;
 &lt;input data-bind="SomeField" data-req-rule="rule1,rule2" /&gt;
 &lt;!-- Email1 and Email2 are used as unique rule names for data-error-class and data-msg --&gt;
-&lt;input data-bind="Email1" data-req-rule="Email1:ValidateEmail2" /&gt;
-&lt;input data-bind="Email2" data-req-rule="Email2:ValidateEmail2" /&gt;
+&lt;input data-bind="Email1" data-req-rule="Email1:globalEmailValidator" /&gt;
+&lt;input data-bind="Email2" data-req-rule="Email2:globalEmailValidator" /&gt;
 </pre>
     </td>
   </tr>
