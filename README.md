@@ -150,7 +150,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-req-field</b></td>
-    <td>Defines required property of js object bound to form. Can be multiple fields separated by <code>,</code></td>
+    <td>Defines required property of js object bound to form. Can be multiple fields separated by <code>,</code>. When failed <code>data-error-class</code> will be applied to current element and <code>data-msg</code> with same value will be shown</td>
   </tr>
   <tr>
     <td colspan="2">
