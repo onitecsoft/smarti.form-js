@@ -265,7 +265,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>data</b></td>
+    <td><b>defaultData</b></td>
     <td>Represents bound empty form js object</td>
   </tr>
   <tr>
@@ -273,6 +273,34 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <pre lang="html">
 &lt;script&gt;
   var defaultData = form.defaultData;
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>errorClass</b></td>
+    <td>Represents common validation error CSS class</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var errorClass = form.errorClass;
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>load(data = null)</b></td>
+    <td>Fill form with data if specified, otherwise <code>defaultData</code> or empty js object is used</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  form.load();
+  var data = { ... };
+  form.load(data);
 &lt;/script&gt;
 </pre>
     </td>
