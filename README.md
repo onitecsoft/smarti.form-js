@@ -150,12 +150,13 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-req-field</b></td>
-    <td></td>
+    <td>Defines required property of js object bound to form. Can be multiple fields separated by <code>,</code></td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;input data-bind="Name" data-req-field="Name" /&gt;
+&lt;input data-bind="Field1" data-req-field="Field1,Field2" /&gt;
 </pre>
     </td>
   </tr>
