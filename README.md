@@ -38,7 +38,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Defines js object to be bound to input controls (global scope)</td>
+    <td>Define bound to form js object (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -54,7 +54,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-default-data</b></td>
-    <td>Defines js object of default item in case of reset form (global scope)</td>
+    <td>Defines bound empty form js object (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -237,6 +237,43 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   var SaveCallback = function(data) { ... }
 &lt;/script&gt;
 &lt;input type="button" value="Save" data-save="/Product/Save" data-callback="SaveCallback" /&gt;
+</pre>
+    </td>
+  </tr>
+</table>
+
+<b>API reference:</b>
+
+<table>
+  <thead>
+    <tr>
+      <th>member</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tr>
+    <td><b>data</b></td>
+    <td>Represents bound to form js object</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var data = form.data;
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><b>data</b></td>
+    <td>Represents bound empty form js object</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  var defaultData = form.defaultData;
+&lt;/script&gt;
 </pre>
     </td>
   </tr>
