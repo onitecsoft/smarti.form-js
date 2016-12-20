@@ -162,7 +162,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-req-rule</b></td>
-    <td>Defines custom validation rule by external js method. <code>this</code> - current HtmlElement (useful when is used single rule for different inputs), method argument - js object bound to form (is filled by form values right before validation)</td>
+    <td>Defines custom validation rule by external js method that returns <code>true</code> or <code>false</code>. <code>this</code> - current HtmlElement (useful when is used single rule for different inputs), method argument - js object bound to form (is filled by form values right before validation). Multiple rules separated by <code>,</code> can be applied to single element</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -170,10 +170,13 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   var ValidateEmail = function (e) { return e.Email != ''; }
   var ValidateEmail2 = function (e) { return this.value != ''; }
+  var rule1 = function(e) { return ... }
+  var rule2 = function(e) { return ... }
 &lt;/script&gt;
 &lt;input data-bind="Email" data-req-rule="ValidateEmail" /&gt;
 &lt;input data-bind="Email1" data-req-rule="ValidateEmail2" /&gt;
 &lt;input data-bind="Email2" data-req-rule="ValidateEmail2" /&gt;
+&lt;input data-bind="SomeField" data-req-rule="rule1,rule2" /&gt;
 </pre>
     </td>
   </tr>
