@@ -126,7 +126,9 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   //jquery ui datepicker example
   $(function () { $("#dateInput").datepicker(); });
 &lt;/script&gt;
-&lt;input id="dateInput" data-set-expr="$(this).datepicker('setDate', data.Date)" data-get-expr="data.Date = $(this).datepicker('getDate')" /&gt;
+&lt;input id="dateInput"
+  data-set-expr="$(this).datepicker('setDate', data.Date)"
+  data-get-expr="data.Date = $(this).datepicker('getDate')" /&gt;
 </pre>
     </td>
   </tr>
