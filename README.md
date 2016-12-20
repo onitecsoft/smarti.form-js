@@ -117,12 +117,16 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set-expr, data-get-expr</b></td>
-    <td>Defines js expression for custom input control</td>
+    <td>Defines js expression for custom input control. <code>this</code> represent current HtmlElement, <code>data</code> represent js object</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;script&gt;
+  //jquery ui datepicker example
+  $(function () { $("#dateInput").datepicker(); });
+&lt;/script&gt;
+&lt;input id="dateInput" data-set-expr="$(this).datepicker('setDate', data.Date)" data-get-expr="data.Date = $(this).datepicker('getDate')" /&gt;
 </pre>
     </td>
   </tr>
