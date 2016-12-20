@@ -321,4 +321,17 @@ if(form.save()) data = form.data;
 </pre>
     </td>
   </tr>
+  <tr>
+    <td><code>void</code> <b>summary(ruleNames)</b></td>
+    <td>Toggles visibility of elements with <code>data-msg</code> attribute and toggles <code>data-error-class</code> on elements with <code>data-req-field</code> and <code>data-req-rule</code> attributes. <code>ruleNames</code> is an array of failed validator names (Used to show server side validation result)</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+  form.summary(['Name','Email','rule1',...]);
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
 </table>
