@@ -117,7 +117,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set-expr, data-get-expr</b></td>
-    <td></td>
+    <td>Defines js expression for custom input control</td>
   </tr>
   <tr>
     <td colspan="2">
