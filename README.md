@@ -162,7 +162,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-req-rule</b></td>
-    <td>Defines custom validation rule by external js method that returns <code>true</code> or <code>false</code>. <code>this</code> - current HtmlElement (useful when is used single rule for different inputs), method argument - js object bound to form (is filled by form values right before validation). Multiple rules separated by <code>,</code> can be applied to single element</td>
+    <td>Defines custom validation rule by external js method that returns <code>true</code> or <code>false</code>. <code>this</code> - current HtmlElement (useful when single rule applied for different inputs), method argument - js object bound to form (filled with form values right before validation). Multiple rules separated by <code>,</code> can be applied to single element</td>
   </tr>
   <tr>
     <td colspan="2">
