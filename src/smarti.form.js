@@ -1,11 +1,13 @@
 var smarti = this['smarti'] || { scope: this };
 
 $(function () {
-	if (!smarti.initialized) {
-		smarti.initialized = true;
-		$('[data-smarti]').smarti();
-	}
-})
+	$(window).load(function () {
+		if (!smarti.initialized) {
+			smarti.initialized = true;
+			$('[data-smarti]').smarti();
+		}
+	});
+});
 
 $.fn.smarti = function () {
 	$.each(this.selector == '[data-smarti]' ? this : this.find('[data-smarti]'), function () {
