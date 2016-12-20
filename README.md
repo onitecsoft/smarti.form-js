@@ -252,7 +252,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </tr>
   </thead>
   <tr>
-    <td><b>data</b></td>
+    <td><code>object</code> <b>data</b></td>
     <td>Represents bound to form js object</td>
   </tr>
   <tr>
@@ -265,7 +265,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>defaultData</b></td>
+    <td><code>object</code> <b>defaultData</b></td>
     <td>Represents bound empty form js object</td>
   </tr>
   <tr>
@@ -278,7 +278,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>errorClass</b></td>
+    <td><code>string</code> <b>errorClass</b></td>
     <td>Represents common validation error CSS class</td>
   </tr>
   <tr>
@@ -291,7 +291,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
     </td>
   </tr>
   <tr>
-    <td><b>load(data = null)</b></td>
+    <td><code>void</code> <b>load(data = null)</b></td>
     <td>Fill form with data if specified, otherwise <code>defaultData</code> or empty js object is used</td>
   </tr>
   <tr>
@@ -301,6 +301,19 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   form.load();
   var data = { ... };
   form.load(data);
+&lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><code>bool</code> <b>save(data = null)</b></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;script&gt;
+
 &lt;/script&gt;
 </pre>
     </td>
