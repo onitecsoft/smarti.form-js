@@ -206,7 +206,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-callback</b></td>
-    <td>Defines callback method after save request.</td>
+    <td>Defines callback method after save request (is used with <code>data-save</code> attribute).</td>
   </tr>
   <tr>
     <td colspan="2">
