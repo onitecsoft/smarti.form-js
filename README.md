@@ -117,7 +117,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set-expr, data-get-expr</b></td>
-    <td>Defines custom js expression bindings. <code>this</code> represent current HtmlElement, <code>data</code> represent js object</td>
+    <td>Defines custom binding by js expression. <code>this</code> - current HtmlElement, <code>data</code> - js object bound to form</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -134,7 +134,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set-method, data-get-method</b></td>
-    <td></td>
+    <td>Defines custom binding by external js method. <code>this</code> - current HtmlElement, method argument - js object bound to form</td>
   </tr>
   <tr>
     <td colspan="2">
