@@ -139,7 +139,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-
+&lt;script&gt;
+  $(function () { $("#dateInput").datepicker(); });
+  var setDate = function (e) { $(this).datepicker('setDate', e.Date); }
+  var getDate = function (e) { e.Date = $(this).datepicker('getDate'); }
+&lt;/script&gt;
+&lt;input id="dateInput" data-set-method="setDate" data-get-method="getDate" /&gt;
 </pre>
     </td>
   </tr>
