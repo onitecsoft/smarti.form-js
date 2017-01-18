@@ -20,13 +20,13 @@ smarti.form = function (jq, opts) {
 	$.extend(that, opts);
 	this.container = jq;
 	this.load = function (data) {
-		that.data = data || that.defaultData || {};
+		that.data = data || $.extend({}, that.defaultData);
 		that.container.find('*').each(function () {
 			that._bind('set', $(this).data(), this, that.data);
 		});
 	}
 	this.save = function (data) {
-		var obj = data || that.data || that.defaultData || {};
+		var obj = data || that.data || $.extend({}, that.defaultData);
 		var f = [], e = [];
 		that.container.find('*').each(function () {
 			var d = $(this).data();
@@ -91,7 +91,7 @@ smarti.form = function (jq, opts) {
 		if (d.msg) jq.hide();
 		if (d.reset) jq.click(function () { that.load() });
 		if (d.save) jq.click(function () {
-			var i = that.data || that.defaultData || {};
+			var i = that.data || $.extend({}, that.defaultData);
 			if (that.save(i)) $.post(d.save, i, function (r) {
 				that.summary(r);
 				if (d.callback) smarti.data.get(d.callback, smarti.scope)(r);
