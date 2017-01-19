@@ -20,10 +20,11 @@ smarti.form = function (jq, opts) {
 	$.extend(that, opts);
 	this.container = jq;
 	this.load = function (data) {
-		that.data = data || $.extend({}, that.defaultData);
+		that.data = $.extend({}, data || that.defaultData);
 		that.container.find('*').each(function () {
 			that._bind('set', $(this).data(), this, that.data);
 		});
+		that.summary();
 	}
 	this.save = function (data) {
 		var obj = data || that.data || $.extend({}, that.defaultData);
@@ -60,14 +61,11 @@ smarti.form = function (jq, opts) {
 		if (d[gs + 'Expr']) new Function("data", d[gs + 'Expr']).call(e, i);
 		else if (d[gs + 'Method']) smarti.data.get(d[gs + 'Method'], smarti.scope).call(e, i);
 		else if (d.bind) {
-			var f = e.type == 'date' ? 'yyyy-MM-dd' : null;
-			if (gs == 'set') e[d.prop || 'value'] = smarti.to(f, smarti.data.get(d.bind, i));
-			else {
-				var v = e[d.prop || 'value'];
-				if (e.type == 'date') v = smarti.parse(v);
-				if (e.type == 'number') v = parseFloat(v);
-				smarti.data.set(d.bind, i, v);
+			if (gs == 'set') {
+				var v = smarti.data.get(d.bind, i);
+				e[d.prop || 'value'] = v != null ? v : '';
 			}
+			else smarti.data.set(d.bind, i, e[d.prop || 'value']);
 		}
 	}
 	this._rule = function (r, f) {
@@ -98,7 +96,7 @@ smarti.form = function (jq, opts) {
 			});
 		});
 	});
-	if (this.data) this.load(smarti.data.get(this.data, smarti.scope));
+	if (this.data) $(window).load(function () { that.load(smarti.data.get(that.data, smarti.scope)); });
 	if (this.defaultData) this.defaultData = smarti.data.get(this.defaultData, smarti.scope);
 	return this;
 }
