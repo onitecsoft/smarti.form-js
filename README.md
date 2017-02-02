@@ -224,8 +224,8 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 <pre lang="html">
 &lt;input type="button" value="Save" data-save="saveForm" /&gt;
 &lt;script&gt;
-  var saveForm = function() {
-    $.post('/product/save', form.data, function(data){
+  var saveForm = function(formData) {
+    $.post('/product/save', formData, function(data){
       form.summary(data.errors);
       ...
     })
