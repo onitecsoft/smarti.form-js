@@ -217,26 +217,20 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-save</b></td>
-    <td>Defines save button. Attribute value represents url where form data will be submitted with ajax post request. Server response may represent an array of <code>data-msg</code> names to show validation error or success messages.</td>
+    <td>Defines save button. Attribute value represents external callback method if client validation succeed.</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;input type="button" value="Save" data-save="/Product/Save" /&gt;
-</pre>
-    </td>
-  </tr>
-  <tr>
-    <td><b>data-callback</b></td>
-    <td>Defines callback method after save request (is used with <code>data-save</code> attribute).</td>
-  </tr>
-  <tr>
-    <td colspan="2">
-<pre lang="html">
+&lt;input type="button" value="Save" data-save="saveForm" /&gt;
 &lt;script&gt;
-  var SaveCallback = function(data) { ... }
+  var saveForm = function() {
+    $.post('/product/save', form.data, function(data){
+      form.summary(data);
+      ...
+    })
+  }
 &lt;/script&gt;
-&lt;input type="button" value="Save" data-save="/Product/Save" data-callback="SaveCallback" /&gt;
 </pre>
     </td>
   </tr>
