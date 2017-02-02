@@ -217,7 +217,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-save</b></td>
-    <td>Defines save button. Attribute value represents external callback method if client validation succeed.</td>
+    <td>Defines save button. Attribute value represents external method that will be executed if client validation succeed.</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -226,7 +226,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   var saveForm = function() {
     $.post('/product/save', form.data, function(data){
-      form.summary(data);
+      form.summary(data.errors);
       ...
     })
   }
