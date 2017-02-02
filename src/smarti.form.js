@@ -92,7 +92,7 @@ smarti.form = function (jq, opts) {
 		var d = jq.data();
 		if (d.msg) jq.hide();
 		if (d.reset) jq.click(function () { that.load() });
-		else if (d.save) jq.click(function () { if (that.save()) smarti.data.get(d.save, smarti.scope)(); });
+		else if (d.save) jq.click(function () { if (that.save()) smarti.data.get(d.save, smarti.scope)(that.data); });
 	});
 	if (this.data) $(window).load(function () { that.load(smarti.data.get(that.data, smarti.scope)); });
 	if (this.defaultData) this.defaultData = smarti.data.get(this.defaultData, smarti.scope);
