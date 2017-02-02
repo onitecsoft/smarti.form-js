@@ -27,8 +27,12 @@ smarti.form = function (jq, opts) {
 		that.summary();
 	}
 	this.save = function (data) {
-		var obj = data || that.data || $.extend({}, that.defaultData);
 		var f = [], e = [];
+		var obj = data || that.data;
+		if (!obj) {
+			that.data = $.extend({}, that.defaultData);
+			obj = that.data;
+		}
 		that.container.find('*').each(function () {
 			var d = $(this).data();
 			that._bind('get', d, this, obj);
@@ -88,13 +92,7 @@ smarti.form = function (jq, opts) {
 		var d = jq.data();
 		if (d.msg) jq.hide();
 		if (d.reset) jq.click(function () { that.load() });
-		if (d.save) jq.click(function () {
-			var i = that.data || $.extend({}, that.defaultData);
-			if (that.save(i)) $.post(d.save, i, function (r) {
-				that.summary(r);
-				if (d.callback) smarti.data.get(d.callback, smarti.scope)(r);
-			});
-		});
+		else if (d.save) jq.click(function () { if (that.save()) smarti.data.get(d.save, smarti.scope)(); });
 	});
 	if (this.data) $(window).load(function () { that.load(smarti.data.get(that.data, smarti.scope)); });
 	if (this.defaultData) this.defaultData = smarti.data.get(this.defaultData, smarti.scope);
