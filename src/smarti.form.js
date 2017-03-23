@@ -26,6 +26,13 @@ smarti.form = function (jq, opts) {
 		});
 		that.summary();
 	}
+	this.sync = function (data) {
+		var obj = that.data || $.extend({}, that.defaultData);
+		var e = that.container.find('*');
+		e.each(function () { that._bind('get', $(this).data(), this, obj); });
+		if (data) $.extend(obj, data);
+		e.each(function () { that._bind('set', $(this).data(), this, obj); });
+	}
 	this.save = function (data) {
 		var f = [], e = [];
 		var obj = data || that.data;
@@ -62,15 +69,15 @@ smarti.form = function (jq, opts) {
 		});
 	}
 	this._bind = function (gs, d, e, i) {
-		if (d[gs + 'Expr']) new Function("data", d[gs + 'Expr']).call(e, i);
-		else if (d[gs + 'Method']) smarti.data.get(d[gs + 'Method'], smarti.scope).call(e, i);
-		else if (d.bind) {
+		if (d.bind) {
 			if (gs == 'set') {
 				var v = smarti.data.get(d.bind, i);
 				e[d.prop || 'value'] = v != null ? v : '';
 			}
 			else smarti.data.set(d.bind, i, e[d.prop || 'value']);
 		}
+		if (d[gs + 'Expr']) new Function("data", d[gs + 'Expr']).call(e, i);
+		else if (d[gs + 'Method']) smarti.data.get(d[gs + 'Method'], smarti.scope).call(e, i);
 	}
 	this._rule = function (r, f) {
 		r = this._sr(r);
