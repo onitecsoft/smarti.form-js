@@ -306,8 +306,8 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;select& onchange="form.sync()"gt;...&lt;/select&gt;
-&lt;select& data-bind="CategoryId" onchange="form.sync({ProductId:null})"gt;...&lt;/select&gt;
+&lt;select onchange="form.sync()"&gt;...&lt;/select&gt;
+&lt;select data-bind="CategoryId" onchange="form.sync({ProductId:null})"&gt;...&lt;/select&gt;
 </pre>
     </td>
   </tr>
