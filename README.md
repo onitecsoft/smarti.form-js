@@ -286,7 +286,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><code>void</code> <b>load(data = null)</b></td>
-    <td>Fills form with data if specified, otherwise <code>defaultData</code> or empty js object is used</td>
+    <td>Fills form with model if specified, otherwise <code>defaultData</code> or empty js object is used</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -296,6 +296,18 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   var data = { ... };
   form.load(data);
 &lt;/script&gt;
+</pre>
+    </td>
+  </tr>
+  <tr>
+    <td><code>void</code> <b>sync(data = null)</b></td>
+    <td>Binds form to model and updates form state from model. Argument represents an object that extend model before update form.</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+<pre lang="html">
+&lt;select& onchange="form.sync()"gt;...&lt;/select&gt;
+&lt;select& data-bind="CategoryId" onchange="form.sync({ProductId:null})"gt;...&lt;/select&gt;
 </pre>
     </td>
   </tr>
