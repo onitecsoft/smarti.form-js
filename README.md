@@ -118,7 +118,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set, data-get</b></td>
-    <td>Defines custom binding by js expression or external method. <code>this</code> - current HtmlElement, <code>data</code> - model bound to form (in case of expression)</td>
+    <td>Defines custom binding by js expression or external method. <code>this</code> - current HtmlElement, <code>data</code> - model bound to form (in case of expression). External method arguments: <code>model</code> and <code>field</code> - value of <code>data-bind</code> attribute</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -126,7 +126,12 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   //jquery ui datepicker example
   $(function () { $("#dateInput").datepicker(); });
-  var getDate = function (e) { e.Date = $(this).datepicker('getDate'); }
+  var getDate = function (data, field) {
+    model.Date = $(this).datepicker('getDate');
+    //or
+    smarti.data.set(field, model, $(this).datepicker('getDate'));
+    //second way is useful for global binders
+  }
 &lt;/script&gt;
 &lt;input id="dateInput" data-set="$(this).datepicker('setDate', data.Date)" data-get="getDate" /&gt;
 </pre>
