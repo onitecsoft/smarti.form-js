@@ -95,28 +95,29 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </thead>
   <tr>
     <td><b>data-bind</b></td>
-    <td>Defines bound js object property name to <code>value</code> property of HtmlElement</td>
+    <td>Defines model property name bound to <code>value</code> or <code>checked</code> property of HtmlElement</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
 &lt;input data-bind="Email" /&gt;
+&lt;input type="checkbox" data-bind="Active" /&gt;
 </pre>
     </td>
   </tr>
   <tr>
     <td><b>data-prop</b></td>
-    <td>Defines bound HtmlElement property name (should be set if it is other than <code>value</code>)</td>
+    <td>Defines custom bound HtmlElement property name (should be set if it is other than <code>value</code> or <code>checked</code>)</td>
   </tr>
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;input type="checkbox" data-bind="Enabled" data-prop="checked" /&gt;
+&lt;input data-bind="CategoryId" data-prop="data-value" /&gt;
 </pre>
     </td>
   </tr>
   <tr>
-    <td><b>data-set-expr, data-get-expr</b></td>
+    <td><b>data-set, data-get</b></td>
     <td>Defines custom binding by js expression. <code>this</code> - current HtmlElement, <code>data</code> - js object bound to form</td>
   </tr>
   <tr>
