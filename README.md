@@ -1,4 +1,4 @@
-# smarti.form.js `Development`
+# smarti.form.js
 
 JQuery form: binding input controls with model, client side validation, client and server side summary
 
