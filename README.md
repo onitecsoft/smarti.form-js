@@ -38,7 +38,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-data</b></td>
-    <td>Define bound to form js object (global scope)</td>
+    <td>Defines model variable name bound to form (global scope)</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -118,7 +118,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set, data-get</b></td>
-    <td>Defines custom binding by js expression or external method. <code>this</code> - current HtmlElement, <code>data</code> - model bound to form</td>
+    <td>Defines custom binding by js expression or external method. <code>this</code> - current HtmlElement, <code>data</code> - model bound to form (in case of expression)</td>
   </tr>
   <tr>
     <td colspan="2">
