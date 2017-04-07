@@ -112,7 +112,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   <tr>
     <td colspan="2">
 <pre lang="html">
-&lt;input data-bind="CategoryId" data-prop="data-value" /&gt;
+&lt;span data-bind="CssClass" data-prop="class"&gt;&lt;/span&gt;
 </pre>
     </td>
   </tr>
