@@ -21,17 +21,15 @@ smarti.form = function (jq, opts) {
 	this.container = jq;
 	this.load = function (data) {
 		that.data = $.extend({}, data || that.defaultData);
-		that.container.find('*').each(function () {
-			that._bind('set', $(this).data(), this, that.data);
-		});
+		that._bind(that.container.find('[data-bind],[data-prop],[data-set]'), that.data, 'set');
 		that.summary();
 	}
 	this.sync = function (data) {
 		var obj = that.data || $.extend({}, that.defaultData);
-		var e = that.container.find('*');
-		e.each(function () { that._bind('get', $(this).data(), this, obj); });
+		var elems = that.container.find('[data-bind],[data-prop],[data-set],[data-get]');
+		that._bind(elems, obj, 'get');
 		if (data) $.extend(obj, data);
-		e.each(function () { that._bind('set', $(this).data(), this, obj); });
+		that._bind(elems, obj, 'set');
 	}
 	this.save = function (data) {
 		var f = [], e = [];
@@ -40,9 +38,9 @@ smarti.form = function (jq, opts) {
 			that.data = $.extend({}, that.defaultData);
 			obj = that.data;
 		}
-		that.container.find('*').each(function () {
+		that._bind(that.container.find('[data-bind],[data-prop],[data-get]'), obj, 'get');
+		that.container.find('[data-req-field],[data-req-rule]').each(function () {
 			var d = $(this).data();
-			that._bind('get', d, this, obj);
 			if (d.reqField) {
 				var r = d.reqField.split(',');
 				for (var i = 0; i < r.length; i++) f.push(that._rule(r[i], null));
@@ -68,16 +66,52 @@ smarti.form = function (jq, opts) {
 			}
 		});
 	}
-	this._bind = function (gs, d, e, i) {
-		if (d.bind) {
-			if (gs == 'set') {
-				var v = smarti.data.get(d.bind, i);
-				e[d.prop || 'value'] = v != null ? v : '';
+	this._bind = function(elems, data, action) {
+		var b = [];
+		elems.each(function() {
+			var d = $(this).data();
+			if (d.bind) {
+				var g = smarti.data.getter(d.bind);
+				if (action == 'get' && b.indexOf(d.bind) == -1) {
+					b.push(d.bind);
+					g(data, null);
+				}
+				that['_' + action](this, d.prop, g, data);
 			}
-			else smarti.data.set(d.bind, i, e[d.prop || 'value']);
+			if (d[action]) {
+				var mf = smarti.data.get(d[action], smarti.scope);
+				if (mf) mf.call(this, data, d.bind);
+				else new Function("data", d[action]).call(this, data);
+			}
+		});
+	}
+	this._set = function (e, prop, g, data) {
+		var v = g(data);
+		if (e.type == 'checkbox' || e.type == 'radio') {
+			prop = 'checked';
+			var ev = e.value == null || e.value == 'on' ? true : e.value;
+			v = smarti.data.filter([].concat(v), function(r) { return r == ev }).length > 0;
 		}
-		if (d[gs + 'Expr']) new Function("data", d[gs + 'Expr']).call(e, i);
-		else if (d[gs + 'Method']) smarti.data.get(d[gs + 'Method'], smarti.scope).call(e, i);
+		if (e.type == 'select-multiple') that._msv(e, v);
+		else e[prop || 'value'] = v != null ? v : '';
+	}
+	this._get = function (e, prop, g, data) {
+		if (e.type == 'checkbox' || e.type == 'radio') {
+			if (e.value == null || e.value == 'on') prop = 'checked';
+			else if (!e.checked) return;
+		}
+		var v = g(data);
+		var ev = e.type == 'select-multiple' ? that._msv(e) : e[prop || 'value'];
+		g(data, v == null ? ev : [].concat(v, ev));
+	}
+	this._msv = function(e) {
+		var r = [];
+		var v = arguments.length > 1 ? [].concat(arguments[1]) : null;
+		for (var i = 0; i < e.options.length; i++) {
+			if (v != null) e.options[i].selected = smarti.data.filter(v, function(r) { return r == e.options[i].value }).length > 0;
+			if (e.options[i].selected) r.push(e.options[i].value);
+		}
+		return r;
 	}
 	this._rule = function (r, f) {
 		r = this._sr(r);
