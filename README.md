@@ -118,7 +118,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
   </tr>
   <tr>
     <td><b>data-set, data-get</b></td>
-    <td>Defines custom binding by js expression. <code>this</code> - current HtmlElement, <code>data</code> - js object bound to form</td>
+    <td>Defines custom binding by js expression or external method. <code>this</code> - current HtmlElement, <code>data</code> - model bound to form</td>
   </tr>
   <tr>
     <td colspan="2">
@@ -126,26 +126,9 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   //jquery ui datepicker example
   $(function () { $("#dateInput").datepicker(); });
-&lt;/script&gt;
-&lt;input id="dateInput"
-  data-set-expr="$(this).datepicker('setDate', data.Date)"
-  data-get-expr="data.Date = $(this).datepicker('getDate')" /&gt;
-</pre>
-    </td>
-  </tr>
-  <tr>
-    <td><b>data-set-method, data-get-method</b></td>
-    <td>Defines custom binding by external js method. <code>this</code> - current HtmlElement, method argument - js object bound to form</td>
-  </tr>
-  <tr>
-    <td colspan="2">
-<pre lang="html">
-&lt;script&gt;
-  $(function () { $("#dateInput").datepicker(); });
-  var setDate = function (e) { $(this).datepicker('setDate', e.Date); }
   var getDate = function (e) { e.Date = $(this).datepicker('getDate'); }
 &lt;/script&gt;
-&lt;input id="dateInput" data-set-method="setDate" data-get-method="getDate" /&gt;
+&lt;input id="dateInput" data-set="$(this).datepicker('setDate', data.Date)" data-get="getDate" /&gt;
 </pre>
     </td>
   </tr>
