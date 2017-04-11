@@ -59,7 +59,7 @@ smarti.form = function (jq, opts) {
 		that.container.find('[data-msg],[data-req-rule],[data-req-field]').each(function () {
 			var d = $(this).data();
 			if (d.msg) $(this).toggle(that._fail(d.msg, rules));
-			else {
+			else if (d.errorClass || that.errorClass) {
 				var c = d.errorClass || that.errorClass;
 				var rr = d.reqField && d.reqRule ? d.reqField + ',' + d.reqRule : d.reqField || d.reqRule;
 				$(this).toggleClass(c, that._fail(rr, rules));
