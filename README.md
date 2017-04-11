@@ -4,6 +4,8 @@ JQuery form: binding input controls with model, client side validation, client a
 
 Automatically initializes when page is loaded. If content was loaded within ajax request, call JQuery extension method `smarti()` on container: `$(container).smarti();`
 
+<b>Examples:</b> http://www.onitecsoft.com/smarti/form
+
 [Download](https://raw.githubusercontent.com/onitecsoft/smarti.form.js/master/src/smarti.form.js)
 
 <b>Dependencies:</b> [smarti.data.js](https://github.com/onitecsoft/smarti.data.js)
