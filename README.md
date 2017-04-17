@@ -128,7 +128,7 @@ Automatically initializes when page is loaded. If content was loaded within ajax
 &lt;script&gt;
   //jquery ui datepicker example
   $(function () { $("#dateInput").datepicker(); });
-  var getDate = function (data, field) {
+  var getDate = function (model, field) {
     model.Date = $(this).datepicker('getDate');
     //or
     smarti.data.set(field, model, $(this).datepicker('getDate'));
